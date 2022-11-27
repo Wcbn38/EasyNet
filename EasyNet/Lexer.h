@@ -2,12 +2,14 @@
 #include <fstream>
 #include <string>
 #include <list>
-#include <set>
+#include <map>
 
-#define LEX_SUCCESS 0x00
+//error ranges from 0x000 to 0x100
+#define LEX_ERROR_OFFSET 0x000
 
-//file errors
-#define LEX_FILE_NOT_OPENED 0x10
+//error codes
+#define LEX_SUCCESS LEX_ERROR_OFFSET + 0x00
+#define LEX_FILE_NOT_OPENED LEX_ERROR_OFFSET + 0x010
 
 struct DELIM
 {
@@ -15,17 +17,17 @@ struct DELIM
 	bool discard;
 };
 
+
 struct DELIM_CMP
 {
-	using is_transparent = void;
-
-	bool operator() (DELIM const& o1, DELIM const& o2) const;
-	bool operator() (DELIM const& del, const std::string str) const;
-	bool operator() (const std::string str, DELIM const& del) const;
+	bool operator()(std::string const& str1, std::string const& str2) const
+	{
+		return str1.back() > str2.back();
+	}
 };
 
 //delim creator
-#define DELIM_TYPE std::set<DELIM, DELIM_CMP>
+#define DELIM_TYPE std::map<std::string, bool, DELIM_CMP>
 
 /**
 Standard lexer, not working with wide character set.

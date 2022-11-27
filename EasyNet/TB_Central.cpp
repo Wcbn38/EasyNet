@@ -2,5 +2,8 @@
 
 int main()
 {
-	TB_Lexer();
+	//TB_DefaultGates();
+	//TB_MultiGates();
+	//TB_Lexer();
+	TB_DotParser();
 }

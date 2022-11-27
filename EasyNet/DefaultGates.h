@@ -1,9 +1,9 @@
 #pragma once
 #include "GenericGate.h"
 
-#define CREATE_GENERIC(name, inNbPorts, outNbPort)																						\
-	class name : public GENERICGATE<inNbPorts, outNbPort>, public NAMEDCLASS {																	\
-	public:			name(NET<LOGICSTATE>* inputs[inNbPorts], std::string name) : GENERICGATE(inputs), NAMEDCLASS(name) {}				\
+#define CREATE_GENERIC(name, inNbPorts, outNbPorts)																						\
+	class name : public GENERICGATE {																	\
+	public:			name(std::vector<NAMEDNET<LOGICSTATE>*> inputs, std::string gateName) : GENERICGATE(inputs, inNbPorts, outNbPorts, gateName) {}				\
 					void update(); };
 
 CREATE_GENERIC(INV, 1, 1);

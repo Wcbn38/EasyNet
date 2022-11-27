@@ -1,4 +1,11 @@
-graph graphname {
-    a -- b -- c;
-    b -- d;
+digraph test {
+	I1 [label = "INPUT"];
+	I2 [label = "INPUT"];
+
+	GATE [label = "AND"];
+
+	O [label = "OUTPUT"];
+
+	I1 -> GATE -> O;
+	I2 -> GATE;
 }

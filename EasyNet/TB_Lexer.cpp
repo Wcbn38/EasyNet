@@ -21,11 +21,11 @@ void TB_Lexer()
 
 	for (DELIM_TYPE::iterator it = delims.begin(); it != delims.end(); it++)
 	{
-		cout << it->tag << endl;
+		cout << it->first << endl;
 	}
 
 	//test
-	/*cout << "************DOT_TB0.dot******************" << endl;
+	cout << "************DOT_TB0.dot******************" << endl;
 	fstream tb0("DOT_TB0.dot", ios_base::in);
 
 	lex(tb0, delims, lexedList);
@@ -34,7 +34,7 @@ void TB_Lexer()
 	{
 		cout << *it << endl;
 	}
-	*/
+	
 	cout << "************DOT_TB1.dot******************" << endl;
 	lexedList.clear();
 	fstream tb1("DOT_TB1.dot", ios_base::in);

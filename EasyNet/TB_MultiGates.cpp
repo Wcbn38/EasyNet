@@ -6,13 +6,13 @@ using namespace std;
 void TB_MultiGates()
 {
 	//full adder
-	NET<LOGICSTATE>* buff[2];
+	std::vector<NAMEDNET<LOGICSTATE>*> buff;
 
-	NET<LOGICSTATE> A(X);
-	NET<LOGICSTATE> B(X);
-	NET<LOGICSTATE> Cin(X);
+	NAMEDNET<LOGICSTATE> A(X, "\\NET_A");
+	NAMEDNET<LOGICSTATE> B(X, "\\NET_B");
+	NAMEDNET<LOGICSTATE> Cin(X, "\\NET_Cin");
 
-	buff[0] = &A; buff[1] = &B;
+	buff.push_back(&A); buff.push_back(&B);
 	XOR xor1(buff, "XOR_1");
 	AND and1(buff, "AND_1");
 

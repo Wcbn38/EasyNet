@@ -3,10 +3,10 @@
 
 void TB_DefaultGates()
 {
-	NET<LOGICSTATE> i1Net(X);
-	NET<LOGICSTATE> i2Net(X);
+	NAMEDNET<LOGICSTATE> i1Net(X, "\\NET_i1Net");
+	NAMEDNET<LOGICSTATE> i2Net(X, "\\NET_i2Net");
 
-	NET<LOGICSTATE>* netArray[] = { &i1Net, &i2Net };
+	std::vector<NAMEDNET<LOGICSTATE>*> netArray = { &i1Net, &i2Net };
 
 	AND and(netArray, "AND");
 	NAND nand(netArray, "NAND");

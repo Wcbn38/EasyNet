@@ -46,6 +46,12 @@
     <Filter Include="Resource Files\TB\Lexer">
       <UniqueIdentifier>{0a1d9910-02f6-45e1-95a5-55f289203456}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\API\Parser\DOT">
+      <UniqueIdentifier>{32405296-1b3c-40da-b769-321f7b348e39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API\Parser\DOT">
+      <UniqueIdentifier>{cf776d5e-d505-4dad-9bad-bcbec01baba1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NamedClass.h">
@@ -69,6 +75,12 @@
     <ClInclude Include="Lexer.h">
       <Filter>Header Files\API\Parser</Filter>
     </ClInclude>
+    <ClInclude Include="Parser_DOT.h">
+      <Filter>Header Files\API\Parser\DOT</Filter>
+    </ClInclude>
+    <ClInclude Include="NamedNetGraph.h">
+      <Filter>Header Files\API\Generic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DefaultGates.cpp">
@@ -76,9 +88,6 @@
     </ClCompile>
     <ClCompile Include="LogicState.cpp">
       <Filter>Source Files\API\Gates</Filter>
-    </ClCompile>
-    <ClCompile Include="NamedClass.cpp">
-      <Filter>Source Files\API\Generic</Filter>
     </ClCompile>
     <ClCompile Include="TB_Central.cpp">
       <Filter>Source Files</Filter>
@@ -95,6 +104,15 @@
     <ClCompile Include="TB_MultiGates.cpp">
       <Filter>Source Files\TB</Filter>
     </ClCompile>
+    <ClCompile Include="Parser_DOT.cpp">
+      <Filter>Source Files\API\Parser\DOT</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_DotParser.cpp">
+      <Filter>Source Files\TB</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericGates.cpp">
+      <Filter>Source Files\API\Gates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="DOT_TB0.dot">
@@ -103,5 +121,10 @@
     <None Include="DOT_TB1.dot">
       <Filter>Resource Files\TB\Lexer</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODO.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

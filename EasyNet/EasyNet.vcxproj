@@ -136,22 +136,29 @@
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="LogicState.h" />
     <ClInclude Include="NamedClass.h" />
+    <ClInclude Include="NamedNetGraph.h" />
     <ClInclude Include="NetGraph.h" />
+    <ClInclude Include="Parser_DOT.h" />
     <ClInclude Include="TB_Central.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DefaultGates.cpp" />
+    <ClCompile Include="GenericGates.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="LogicState.cpp" />
-    <ClCompile Include="NamedClass.cpp" />
+    <ClCompile Include="Parser_DOT.cpp" />
     <ClCompile Include="TB_Central.cpp" />
     <ClCompile Include="TB_DefaultGates.cpp" />
+    <ClCompile Include="TB_DotParser.cpp" />
     <ClCompile Include="TB_Lexer.cpp" />
     <ClCompile Include="TB_MultiGates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DOT_TB0.dot" />
     <None Include="DOT_TB1.dot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
