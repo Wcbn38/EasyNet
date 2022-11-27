@@ -48,6 +48,9 @@
     <ClInclude Include="DefaultGates.h">
       <Filter>Header Files\API\Gates</Filter>
     </ClInclude>
+    <ClInclude Include="TB_Central.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TB_DefaultGates.cpp">
@@ -61,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="NamedClass.cpp">
       <Filter>Source Files\API\Generic</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_MultiGates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_Central.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -132,12 +132,15 @@
     <ClInclude Include="LogicState.h" />
     <ClInclude Include="NamedClass.h" />
     <ClInclude Include="NetGraph.h" />
+    <ClInclude Include="TB_Central.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DefaultGates.cpp" />
     <ClCompile Include="LogicState.cpp" />
     <ClCompile Include="NamedClass.cpp" />
+    <ClCompile Include="TB_Central.cpp" />
     <ClCompile Include="TB_DefaultGates.cpp" />
+    <ClCompile Include="TB_MultiGates.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

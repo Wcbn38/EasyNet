@@ -21,7 +21,7 @@ public:
 	Gets output net.
 	\param index: output index.
 	*/
-	virtual NET<TSTATE>& getOutputNet(int index) = 0;
+	virtual NET<TSTATE>* getOutputNet(int index) = 0;
 };
 
 template <typename TSTATE>

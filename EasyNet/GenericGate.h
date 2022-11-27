@@ -25,7 +25,7 @@ public:
 	\param index: index of the net.
 	\return output net.
 	*/
-	NET<LOGICSTATE>& getOutputNet(int index);
+	NET<LOGICSTATE>* getOutputNet(int index);
 
 	/**
 	Gets the number of output nets.
@@ -51,7 +51,7 @@ GENERICGATE<PORTIN, PORTOUT>::GENERICGATE(NET<LOGICSTATE>* inputs[PORTIN])
 }
 
 template<int PORTIN, int PORTOUT>
-NET<LOGICSTATE>& GENERICGATE<PORTIN, PORTOUT>::getOutputNet(int index)
+NET<LOGICSTATE>* GENERICGATE<PORTIN, PORTOUT>::getOutputNet(int index)
 {
-	return this->outs[index];
+	return &this->outs[index];
 }	
