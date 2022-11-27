@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\API">
+      <UniqueIdentifier>{b64197eb-b2ae-4725-bf3c-7e75422aee64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API\Gates">
+      <UniqueIdentifier>{f0ea86c8-e3f5-4bd9-aaf5-afa878529601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API\Generic">
+      <UniqueIdentifier>{8215bc7c-66a8-464e-b326-c6b060bc66ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API">
+      <UniqueIdentifier>{07b35ea7-a419-4921-bcb2-0f06cb803ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API\Gates">
+      <UniqueIdentifier>{2956b643-0e1c-4d29-8b75-62060f489ff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API\Generic">
+      <UniqueIdentifier>{858d65ce-588f-4695-91c2-24d3c307db4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NamedClass.h">
+      <Filter>Header Files\API\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="NetGraph.h">
+      <Filter>Header Files\API\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="LogicState.h">
+      <Filter>Header Files\API\Gates</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericGate.h">
+      <Filter>Header Files\API\Gates</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultGates.h">
+      <Filter>Header Files\API\Gates</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TB_DefaultGates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultGates.cpp">
+      <Filter>Source Files\API\Gates</Filter>
+    </ClCompile>
+    <ClCompile Include="LogicState.cpp">
+      <Filter>Source Files\API\Gates</Filter>
+    </ClCompile>
+    <ClCompile Include="NamedClass.cpp">
+      <Filter>Source Files\API\Generic</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
