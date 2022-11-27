@@ -76,6 +76,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,6 +106,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="DefaultGates.h" />
     <ClInclude Include="GenericGate.h" />
+    <ClInclude Include="Lexer.h" />
     <ClInclude Include="LogicState.h" />
     <ClInclude Include="NamedClass.h" />
     <ClInclude Include="NetGraph.h" />
@@ -136,11 +141,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DefaultGates.cpp" />
+    <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="LogicState.cpp" />
     <ClCompile Include="NamedClass.cpp" />
     <ClCompile Include="TB_Central.cpp" />
     <ClCompile Include="TB_DefaultGates.cpp" />
+    <ClCompile Include="TB_Lexer.cpp" />
     <ClCompile Include="TB_MultiGates.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DOT_TB0.dot" />
+    <None Include="DOT_TB1.dot" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

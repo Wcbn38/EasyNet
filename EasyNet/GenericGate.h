@@ -12,6 +12,9 @@ protected:
 	NET<LOGICSTATE> outs[PORTOUT] = {X};
 
 public:
+	/**
+	Generic gates constructor.
+	*/
 	GENERICGATE() = delete;
 
 	/**
@@ -54,4 +57,4 @@ template<int PORTIN, int PORTOUT>
 NET<LOGICSTATE>* GENERICGATE<PORTIN, PORTOUT>::getOutputNet(int index)
 {
 	return &this->outs[index];
-}	
+}

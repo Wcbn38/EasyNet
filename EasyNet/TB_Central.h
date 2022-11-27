@@ -2,3 +2,4 @@
 
 void TB_DefaultGates();
 void TB_MultiGates();
+void TB_Lexer();

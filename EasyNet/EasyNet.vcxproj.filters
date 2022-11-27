@@ -31,6 +31,21 @@
     <Filter Include="Source Files\API\Generic">
       <UniqueIdentifier>{858d65ce-588f-4695-91c2-24d3c307db4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\API\Parser">
+      <UniqueIdentifier>{976641e6-a5ba-40b6-a462-997e0b175771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API\Parser">
+      <UniqueIdentifier>{23e31646-dae1-4f89-a064-32177ee62265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TB">
+      <UniqueIdentifier>{d27e8732-3443-42ba-a47a-3e4687cf92d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\TB">
+      <UniqueIdentifier>{2b212b5f-6968-4e8a-abb6-f4b31416bbc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\TB\Lexer">
+      <UniqueIdentifier>{0a1d9910-02f6-45e1-95a5-55f289203456}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NamedClass.h">
@@ -51,11 +66,11 @@
     <ClInclude Include="TB_Central.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Lexer.h">
+      <Filter>Header Files\API\Parser</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TB_DefaultGates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DefaultGates.cpp">
       <Filter>Source Files\API\Gates</Filter>
     </ClCompile>
@@ -65,11 +80,28 @@
     <ClCompile Include="NamedClass.cpp">
       <Filter>Source Files\API\Generic</Filter>
     </ClCompile>
-    <ClCompile Include="TB_MultiGates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TB_Central.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lexer.cpp">
+      <Filter>Source Files\API\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_DefaultGates.cpp">
+      <Filter>Source Files\TB</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_Lexer.cpp">
+      <Filter>Source Files\TB</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_MultiGates.cpp">
+      <Filter>Source Files\TB</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DOT_TB0.dot">
+      <Filter>Resource Files\TB\Lexer</Filter>
+    </None>
+    <None Include="DOT_TB1.dot">
+      <Filter>Resource Files\TB\Lexer</Filter>
+    </None>
   </ItemGroup>
 </Project>

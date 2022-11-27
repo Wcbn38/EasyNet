@@ -2,5 +2,5 @@
 
 int main()
 {
-	TB_MultiGates();
+	TB_Lexer();
 }
