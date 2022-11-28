@@ -22,5 +22,6 @@ Lexes a file with configurable delimiters.
 \param file: file to lex
 \param delimiters: delimiters to use
 \param lexListContainer: list receiving the lexed file
+\return LEX_SUCCESS on success.
 */
 int lex(std::fstream& file, DELIM_MAP& delimiters, LEXED_LIST& lexListContainer);
