@@ -1,39 +1,26 @@
 #pragma once
-#include <fstream>
 #include <string>
+#include <fstream>
 #include <list>
-#include <map>
+#include <utility>
 
-//error ranges from 0x000 to 0x100
-#define LEX_ERROR_OFFSET 0x000
+#define LEX_SUCCESS -0x00
+#define LEX_FILE_NOT_OPENED -0x01
 
-//error codes
-#define LEX_SUCCESS LEX_ERROR_OFFSET + 0x00
-#define LEX_FILE_NOT_OPENED LEX_ERROR_OFFSET + 0x010
-
-struct DELIM
+enum DELIM_MODE : bool
 {
-	std::string tag;
-	bool discard;
+	SAVE,
+	DISCARD
 };
 
-
-struct DELIM_CMP
-{
-	bool operator()(std::string const& str1, std::string const& str2) const
-	{
-		return str1.back() > str2.back();
-	}
-};
-
-//delim creator
-#define DELIM_TYPE std::map<std::string, bool, DELIM_CMP>
+#define DELIM_MAP std::list<std::pair<std::string, DELIM_MODE>>
+#define LEXED_LIST std::list<std::string>
+#define ADD_DELIM(var, tag, conf) var.push_back(std::pair<std::string, DELIM_MODE>(tag, conf));
 
 /**
-Standard lexer, not working with wide character set.
-\param file: file to lex.
-\param delims: seperators.
-\param lexedList: list to complete with extracted words.
-\return LEX_SUCCESS (0) on success.
+Lexes a file with configurable delimiters.
+\param file: file to lex
+\param delimiters: delimiters to use
+\param lexListContainer: list receiving the lexed file
 */
-int lex(std::fstream& file, DELIM_TYPE & delims, std::list<std::string>& lexedList);
+int lex(std::fstream& file, DELIM_MAP& delimiters, LEXED_LIST& lexListContainer);

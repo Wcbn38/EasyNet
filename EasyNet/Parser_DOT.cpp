@@ -20,11 +20,11 @@ ERROR parse_obj(std::map<std::string, DOT_OBJ>& objList, std::set<NAMEDNET<LOGIC
 ERROR parser_DOT(std::fstream& file, std::set<NAMEDNET<LOGICSTATE>*>& innetlist, std::set<NAMEDNET<LOGICSTATE>*>& outnetlist)
 {
 	//lexer
-	DELIM_TYPE delims;
+	DELIM_MAP delims;
 	std::list<std::string> lexedList;
 	
 	for (int i = 0; i < (sizeof(dot_delimiters) / sizeof(DELIM)); i++)
-		delims.insert({ dot_delimiters[i].tag, dot_delimiters[i].discard});
+		ADD_DELIM(delims, dot_delimiters[i].tag, dot_delimiters[i].mode);
 
 	switch (lex(file, delims, lexedList))
 	{

@@ -1,36 +1,40 @@
 #include "Lexer.h"
 
-int lex(std::fstream& file, DELIM_TYPE& delims, std::list<std::string>& lexedList)
+#include "lexer.h"
+
+int lex(std::fstream& file, DELIM_MAP& delimiters, LEXED_LIST& lexListContainer)
 {
 	if (!file.is_open())
-	{
 		return LEX_FILE_NOT_OPENED;
-	}
 
-	std::string buffer;
+	std::string buf;
+	int iResult = file.get();
 
-	while (!file.eof())
+	while (iResult != EOF)
 	{
-		buffer += file.get();
-		if (file.gcount() <= 0) //EOF
-			return LEX_SUCCESS;
+		buf += iResult;
 
-		std::map<std::string, bool>::iterator findIT = delims.find(buffer);
+		DELIM_MAP::iterator delimSearch;
+		for (delimSearch = delimiters.begin(); delimSearch != delimiters.end(); delimSearch++)
+			if (delimSearch->first.size() <= buf.size())
+				if (delimSearch->first == buf.substr(buf.size() - delimSearch->first.size()))
+					break;
 
-		if (findIT != delims.end()) //delim found, add to list
+		if (delimSearch != delimiters.end())
 		{
-			if((buffer.size() - findIT->first.size()) > 0)
-				lexedList.push_back(buffer.substr(0, buffer.size() - findIT->first.size()));
+			if ((buf.size() - delimSearch->first.size()) > 0)
+				lexListContainer.push_back(buf.substr(0, buf.size() - delimSearch->first.size()));
 
-			if (!findIT->second)
-				lexedList.push_back(findIT->first);
+			if (delimSearch->second == SAVE)
+				lexListContainer.push_back(delimSearch->first);
 
-			buffer = "";
+			buf = ""; //reset buffer
 		}
+
+		iResult = file.get();
 	}
 
-	if(buffer.size() > 0)
-		lexedList.push_back(buffer);
+	lexListContainer.push_back(buf);
 
 	return LEX_SUCCESS;
 }

@@ -6,20 +6,20 @@ using namespace std;
 void TB_Lexer()
 {
 	list<string> lexedList;
-	DELIM_TYPE delims;
+	DELIM_MAP delims;
 
 	//to discard
-	delims.insert({ " ", true });
-	delims.insert({ "{", false });
-	delims.insert({ "}", false });
-	delims.insert({ "\t", true });
-	delims.insert({ "[", true });
-	delims.insert({ "]", true });
-	delims.insert({ "=", false });
-	delims.insert({ ";", false });
-	delims.insert({ "\n", true });
+	ADD_DELIM(delims, " ", DISCARD);
+	ADD_DELIM(delims, "{", SAVE);
+	ADD_DELIM(delims, "}", SAVE);
+	ADD_DELIM(delims, "\t", DISCARD);
+	ADD_DELIM(delims, "[", SAVE);
+	ADD_DELIM(delims, "]", SAVE);
+	ADD_DELIM(delims, "=", SAVE);
+	ADD_DELIM(delims, ";", SAVE);
+	ADD_DELIM(delims, "\n", DISCARD);
 
-	for (DELIM_TYPE::iterator it = delims.begin(); it != delims.end(); it++)
+	for (DELIM_MAP::iterator it = delims.begin(); it != delims.end(); it++)
 	{
 		cout << it->first << endl;
 	}

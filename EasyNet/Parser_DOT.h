@@ -21,21 +21,27 @@ struct ERROR
 	int code;
 };
 
+struct DELIM
+{
+	std::string tag;
+	DELIM_MODE mode;
+};
+
 const DELIM dot_delimiters[] = {
 	//delimiters
-	{" ", true},
-	{"\n", true},
-	{"\t", true},
+	{" ", DISCARD},
+	{"\n", DISCARD},
+	{"\t", DISCARD},
 
 	//keys
-	{";", false},
-	{"->", false},
-	{"[", false},
-	{"]", false},
-	{"\"", false},
-	{"=", false},
-	{"{", false},
-	{"}", false}
+	{";", SAVE},
+	{"->", SAVE},
+	{"[", SAVE},
+	{"]", SAVE},
+	{"\"", SAVE},
+	{"=", SAVE},
+	{"{", SAVE},
+	{"}", SAVE}
 };
 
 ERROR parser_DOT(std::fstream& file, std::set<NAMEDNET<LOGICSTATE>*>& innetlist, std::set<NAMEDNET<LOGICSTATE>*>& outnetlist);
