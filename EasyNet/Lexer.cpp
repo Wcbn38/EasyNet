@@ -1,7 +1,5 @@
 #include "Lexer.h"
 
-#include "lexer.h"
-
 int lex(std::fstream& file, DELIM_MAP& delimiters, LEXED_LIST& lexListContainer)
 {
 	if (!file.is_open())
@@ -29,6 +27,30 @@ int lex(std::fstream& file, DELIM_MAP& delimiters, LEXED_LIST& lexListContainer)
 				lexListContainer.push_back(delimSearch->first);
 
 			buf = ""; //reset buffer
+
+			if (delimSearch->second == TOGGLE_STRING)
+			{
+				while (buf.size() < delimSearch->first.size())
+				{
+					iResult = file.get();
+
+					if (iResult == EOF)
+						return MISSING_END_SEPARATOR;
+
+					buf += iResult;
+				}
+
+				while (buf.substr(buf.size() - delimSearch->first.size()) != delimSearch->first)
+				{
+					iResult = file.get();
+
+					if (iResult == EOF)
+						return MISSING_END_SEPARATOR;
+
+					buf += iResult;
+				}
+				buf = buf.substr(0, buf.size() - 1);
+			}
 		}
 
 		iResult = file.get();

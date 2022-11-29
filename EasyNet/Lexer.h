@@ -6,11 +6,13 @@
 
 #define LEX_SUCCESS -0x00
 #define LEX_FILE_NOT_OPENED -0x01
+#define MISSING_END_SEPARATOR -0x02
 
-enum DELIM_MODE : bool
+enum DELIM_MODE : uint8_t
 {
 	SAVE,
-	DISCARD
+	DISCARD,
+	TOGGLE_STRING
 };
 
 #define DELIM_MAP std::list<std::pair<std::string, DELIM_MODE>>

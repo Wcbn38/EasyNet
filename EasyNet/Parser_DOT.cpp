@@ -82,15 +82,7 @@ ERROR parse_graph(std::map<std::string, DOT_OBJ>& objList, std::list<std::string
 					return { "Invalid token.", PARSE_CORRUPTED_FORMAT };
 				lexedList.pop_front();
 
-				if (lexedList.front() != "\"")
-					return { "Missing '\"'.", PARSE_CORRUPTED_FORMAT };
-				lexedList.pop_front();
-
 				std::string attribute = lexedList.front();
-				lexedList.pop_front();
-
-				if (lexedList.front() != "\"")
-					return { "Missing '\"'.", PARSE_CORRUPTED_FORMAT };
 				lexedList.pop_front();
 
 				if (property == "label")
@@ -167,7 +159,18 @@ ERROR constructGateObj(std::map<std::string, DOT_OBJ>::iterator obj, std::map<st
 
 		if (obj->second.label == "AND") {
 			new AND(inputNets, obj->first);
+		} else if (obj->second.label == "OR") {
+			new OR(inputNets, obj->first);
+		} else if (obj->second.label == "NOR") {
+			new NOR(inputNets, obj->first);
+		} else if (obj->second.label == "NAND") {
+			new NAND(inputNets, obj->first);
+		} else if (obj->second.label == "XOR") {
+			new XOR(inputNets, obj->first);
+		} else if (obj->second.label == "NXOR") {
+			new NXOR(inputNets, obj->first);
 		}
+
 		else if (obj->second.label == "OUTPUT") {
 			if (inputNets.size() != 1)
 				return { "Output not has multiple connections.", PARSE_FAILED_TO_BUILD };

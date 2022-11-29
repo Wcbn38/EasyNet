@@ -4,28 +4,7 @@
 #include "NamedNetGraph.h"
 #include "DefaultGates.h"
 #include <set>
-
-//error ranges from 0x100 to 0x200
-#define PARSE_ERROR_OFFSET
-
-//error codes
-#define PARSE_NO_ERROR PARSE_ERROR_OFFSET + 0x00
-#define PARSE_CORRUPTED_FORMAT PARSE_ERROR_OFFSET + 0x01
-#define PARSE_FAILED_TO_BUILD PARSE_ERROR_OFFSET + 0x02
-
-#define PARSE_UNKNWON_ERROR PARSE_ERROR_OFFSET + 0xFF
-
-struct ERROR
-{
-	std::string msg;
-	int code;
-};
-
-struct DELIM
-{
-	std::string tag;
-	DELIM_MODE mode;
-};
+#include "Parse.h"
 
 const DELIM dot_delimiters[] = {
 	//delimiters
@@ -38,7 +17,7 @@ const DELIM dot_delimiters[] = {
 	{"->", SAVE},
 	{"[", SAVE},
 	{"]", SAVE},
-	{"\"", SAVE},
+	{"\"", TOGGLE_STRING},
 	{"=", SAVE},
 	{"{", SAVE},
 	{"}", SAVE}

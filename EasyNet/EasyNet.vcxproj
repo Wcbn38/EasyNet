@@ -138,7 +138,10 @@
     <ClInclude Include="NamedClass.h" />
     <ClInclude Include="NamedNetGraph.h" />
     <ClInclude Include="NetGraph.h" />
+    <ClInclude Include="Parse.h" />
     <ClInclude Include="Parser_DOT.h" />
+    <ClInclude Include="Parser_WAVEDROM.h" />
+    <ClInclude Include="Stimuli.h" />
     <ClInclude Include="TB_Central.h" />
   </ItemGroup>
   <ItemGroup>
@@ -147,15 +150,18 @@
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="LogicState.cpp" />
     <ClCompile Include="Parser_DOT.cpp" />
+    <ClCompile Include="Parser_WAVEDROM.cpp" />
     <ClCompile Include="TB_Central.cpp" />
     <ClCompile Include="TB_DefaultGates.cpp" />
     <ClCompile Include="TB_DotParser.cpp" />
     <ClCompile Include="TB_Lexer.cpp" />
     <ClCompile Include="TB_MultiGates.cpp" />
+    <ClCompile Include="TB_Stimuli.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DOT_TB0.dot" />
     <None Include="DOT_TB1.dot" />
+    <None Include="STIMU_TB0.wave" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODO.txt" />

@@ -52,6 +52,15 @@
     <Filter Include="Header Files\API\Parser\DOT">
       <UniqueIdentifier>{cf776d5e-d505-4dad-9bad-bcbec01baba1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\API\Parser\WAVEDROM">
+      <UniqueIdentifier>{af7fbddb-d4af-4a0c-a60d-b6701bdb9e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API\Stimuli">
+      <UniqueIdentifier>{1e9b5785-ba0d-408b-a044-77bb8fccfce7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API\Parser\WAVEDROM">
+      <UniqueIdentifier>{9d85f46b-39ad-483d-b09f-1f3cb3a98338}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NamedClass.h">
@@ -80,6 +89,15 @@
     </ClInclude>
     <ClInclude Include="NamedNetGraph.h">
       <Filter>Header Files\API\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser_WAVEDROM.h">
+      <Filter>Header Files\API\Parser\WAVEDROM</Filter>
+    </ClInclude>
+    <ClInclude Include="Parse.h">
+      <Filter>Header Files\API\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Stimuli.h">
+      <Filter>Header Files\API\Stimuli</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,12 +131,21 @@
     <ClCompile Include="GenericGates.cpp">
       <Filter>Source Files\API\Gates</Filter>
     </ClCompile>
+    <ClCompile Include="Parser_WAVEDROM.cpp">
+      <Filter>Source Files\API\Parser\WAVEDROM</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_Stimuli.cpp">
+      <Filter>Source Files\TB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="DOT_TB0.dot">
       <Filter>Resource Files\TB\Lexer</Filter>
     </None>
     <None Include="DOT_TB1.dot">
+      <Filter>Resource Files\TB\Lexer</Filter>
+    </None>
+    <None Include="STIMU_TB0.wave">
       <Filter>Resource Files\TB\Lexer</Filter>
     </None>
   </ItemGroup>

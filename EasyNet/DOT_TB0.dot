@@ -1,14 +1,32 @@
-digraph g {
-	node [shape=plaintext];
-	A1 -> B1;
-	A2 -> B2;
-	A3 -> B3;
-	
-	A1 -> A2 [label=f];
-	A2 -> A3 [label=g];
-	B2 -> B3 [label="g'"];
-	B1 -> B3 [label="(g o f)'" tailport=s headport=s];
+digraph test {
+	A [label = "INPUT"];
+	B [label = "INPUT"];
+	Cin [label = "INPUT"];
 
-	{ rank=same; A1 A2 A3 }
-	{ rank=same; B1 B2 B3 } 
+	Sum [label = "OUTPUT"];
+	Cout [label = "OUTPUT"];
+
+	XOR_1 [label = "XOR"];
+	XOR_2 [label = "XOR"];
+	AND_1 [label = "AND"];
+	AND_2 [label = "AND"];
+	OR_1 [label = "OR"];
+
+	A -> XOR_1;
+	B -> XOR_1;
+
+	XOR_1 -> XOR_2;
+	Cin -> XOR_2;
+	XOR_2 -> Sum;
+
+	XOR_1 -> AND_2;
+	Cin -> AND_2;
+
+	A -> AND_1;
+	B -> AND_1;
+
+	AND_1 -> OR_1;
+	AND_2 -> OR_1;
+
+	OR_1 -> Cout;
 }

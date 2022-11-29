@@ -5,5 +5,6 @@ int main()
 	//TB_DefaultGates();
 	//TB_MultiGates();
 	//TB_Lexer();
-	TB_DotParser();
+	//TB_DotParser();
+	TB_Stimuli();
 }
